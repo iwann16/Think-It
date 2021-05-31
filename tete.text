@@ -1,0 +1,7 @@
+ <strong>
+                          {" "}
+                          {user.posts.length}{" "}
+                          {user.posts.length === 1 ? "post " : "posts"}
+                        </strong>
+                  
+                 
