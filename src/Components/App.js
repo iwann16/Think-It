@@ -10,6 +10,7 @@ import EditUpload from "./EditUpload";
 import Search from "./Search";
 import "../style.css";
 import UserSearch from "./UserSearch";
+import NotFoundPage from "./NotFoundPage";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <PrivateRoute path="/" exact component={Dashboard} />
             <PrivateRoute path="/upload" component={Upload} />
             <PrivateRoute path="/edit/:postId" component={EditUpload} />
+            <Route component={NotFoundPage} />
           </Switch>
         </AuthProvider>
       </Router>

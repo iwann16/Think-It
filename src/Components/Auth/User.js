@@ -21,8 +21,6 @@ export default function User() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [hastag, setHastag] = useState(false);
-
   const {
     currentUser,
     logout,
@@ -291,7 +289,11 @@ export default function User() {
                     <h3 className="text-center">No likes yet 😥 </h3>
                   ) : (
                     usersThatLiked.map((user) => (
-                      <div className="d-flex flex-inline mb-2">
+                      <div
+                        className="d-flex flex-inline mb-2 "
+                        style={{ cursor: "pointer" }}
+                        onClick={() => history.push(`/search/${user.username}`)}
+                      >
                         <div className="d-flex justify-content-start mr-2">
                           <img
                             src={user.profilePic}

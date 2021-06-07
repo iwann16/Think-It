@@ -1,6 +1,11 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 export default function Footer() {
-  return <div className="d-flex justify-content-center">footer here</div>;
+  return (
+    <Navbar
+      sticky="bottom"
+      style={{ minWidth: "300px", minHeight: "10px" }}
+    ></Navbar>
+  );
 }

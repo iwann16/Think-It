@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import { db } from "../firebase";
-import { Form, Button, Alert, Card, Container } from "react-bootstrap";
+import { Form, Button, Card, Container } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +32,7 @@ export default function Search() {
 
     if (query === currentUser.displayName) setYou(true);
 
-    setTimeout(() => setLoading(false), 100);
+    setTimeout(() => setLoading(false), 300);
   };
 
   return (
@@ -76,7 +76,11 @@ export default function Search() {
               ) : (
                 users.map((user) => (
                   <div
-                    onClick={() => history.push(`/search/${user.username}`)}
+                    onClick={() =>
+                      you
+                        ? history.push("/user")
+                        : history.push(`/search/${user.username}`)
+                    }
                     style={{ cursor: "pointer" }}
                   >
                     <div className="d-flex flex-column">

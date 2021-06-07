@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Container } from "react-bootstrap";
 import Feed from "./Feed";
+
 export default function Dashboard() {
   return (
     <>

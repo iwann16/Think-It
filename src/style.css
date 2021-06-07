@@ -16,6 +16,15 @@
   overflow-y: auto;
 }
 
+/*the auth link*/
+.authLink {
+  color: rgb(255, 0, 0);
+}
+
+.authLink:hover {
+  color: rgb(255, 255, 255);
+}
+
 /* width of scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

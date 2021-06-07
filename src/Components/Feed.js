@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "../style.css";
 import { Button } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 export default function Feed() {
   const { currentUser } = useAuth();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   const loadPosts = () => {
     return db
@@ -81,7 +83,7 @@ export default function Feed() {
         style={{ minHeight: "100vh" }}
       >
         <div className="w-100" style={{ minWidth: "300px" }}>
-          <div className="d-flex justify-content-center align-items-center  mb-3 ">
+          <div className="d-flex justify-content-center align-items-center mt-3 mb-3 ">
             <h3 className="text-center">My Feed</h3>
           </div>
 
@@ -103,7 +105,11 @@ export default function Feed() {
                 >
                   <Card.Body>
                     <div className="d-flex flex-column">
-                      <div className="d-flex justify-content-start">
+                      <div
+                        className="d-flex justify-content-start"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => history.push(`/search/${post.username}`)}
+                      >
                         <img
                           src={post.profilePic}
                           alt="user pic"
