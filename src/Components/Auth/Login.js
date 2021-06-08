@@ -37,14 +37,30 @@ export default function Login() {
         <div className="w-50" style={{ minWidth: "350px" }}>
           <Card bg="dark" text="light">
             <Card.Body>
-              <h2 className="text-start mt-2 font-weight-bold mb-3">WELCOME</h2>
+              <h2 className="text-start mt-2 font-weight-bold mb-3">
+                THINK IT!🤔
+              </h2>
               <p className="mb-3">
                 By logging in you accept our{" "}
-                <Link to="/" style={{ color: "red" }}>
+                <Link
+                  to={{
+                    pathname:
+                      "https://github.com/iwann16/Think-It/blob/master/README.md",
+                  }}
+                  target="_blank"
+                  style={{ color: "red" }}
+                >
                   Privacy <br></br>Policy
                 </Link>{" "}
                 and{" "}
-                <Link to="/" style={{ color: "red" }}>
+                <Link
+                  to={{
+                    pathname:
+                      "https://github.com/iwann16/Think-It/blob/master/README.md",
+                  }}
+                  target="_blank"
+                  style={{ color: "red" }}
+                >
                   Terms of Service
                 </Link>
               </p>
