@@ -5,6 +5,7 @@ import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { Link, useHistory } from "react-router-dom";
 import { googleProvider, facebookProvider } from "../../firebase";
 import { useAuth } from "../../Contexts/AuthContext";
+import Footer from "../Footer";
 
 export default function Login() {
   const history = useHistory();
@@ -31,7 +32,7 @@ export default function Login() {
     <>
       <Container
         className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "101vh" }}
       >
         <div className="w-50" style={{ minWidth: "350px" }}>
           <Card bg="dark" text="light">
@@ -77,6 +78,7 @@ export default function Login() {
           {error && <Alert variant="danger">{error}</Alert>}
         </div>
       </Container>
+      <Footer />
     </>
   );
 }

@@ -121,7 +121,7 @@ export default function User() {
       <Container fluid style={{ color: "white" }}>
         <Container
           className="d-flex justify-content-center align-items-center"
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "101vh" }}
         >
           <div className="w-50" style={{ minWidth: "350px" }}>
             <div className="d-flex justify-content-start align-items-start mt-3 mb-1 ml-1">

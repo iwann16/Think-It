@@ -6,7 +6,11 @@ import moment from "moment";
 import { useHistory, useParams } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart,
+  faCertificate,
+  faArrowAltCircleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import "../style.css";
 import Footer from "./Footer";
 
@@ -102,11 +106,16 @@ export default function UserSearch() {
       <Container fluid style={{ color: "white" }}>
         <Container
           className="d-flex justify-content-center align-items-center"
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "101vh" }}
         >
           <div className="w-50" style={{ minWidth: "350px" }}>
             <Card bg="dark" text="light" style={{ marginTop: "50px" }}>
               <Card.Body>
+                <div className="d-flex justify-content-start ">
+                  <Button variant="danger" onClick={() => history.push("")}>
+                    <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                  </Button>
+                </div>
                 {!theUser || loading ? (
                   <div className="d-flex justify-content-center">
                     <div className="lds-ripple">
@@ -129,12 +138,13 @@ export default function UserSearch() {
                         <strong>{theUser.username}</strong>
                       </div>
                     </div>
-                    <div className="d-flex justify-content-between mt-3">
+                    <div className="d-flex justify-content-center mt-3">
                       <Card
                         style={{
                           width: "80px",
                           height: "80px",
                           marginTop: "2px",
+                          marginRight: "4px",
                         }}
                         bg="secondary"
                         text="light"
@@ -156,81 +166,34 @@ export default function UserSearch() {
                         </Card.Footer>
                       </Card>
 
-                      <Card
-                        style={{
-                          width: "80px",
-                          height: "80px",
-                          marginTop: "2px",
-                        }}
-                        bg="secondary"
-                        text="light"
-                      >
-                        <Card.Body style={{ padding: "25px" }}>
-                          <div
-                            className="d-flex justify-content-center align-items-center "
-                            style={{ height: "100%", width: "100%" }}
-                          >
-                            <strong style={{ fontSize: "30px" }}>
-                              {theUser.posts.length}
-                            </strong>
-                          </div>
-                        </Card.Body>
-                        <Card.Footer style={{ padding: "5px" }}>
-                          <div className="d-flex justify-content-center align-items-center">
-                            <p style={{ marginTop: "-3px" }}>POSTS</p>
-                          </div>
-                        </Card.Footer>
-                      </Card>
-                      <Card
-                        style={{
-                          width: "80px",
-                          height: "80px",
-                          marginTop: "2px",
-                        }}
-                        bg="secondary"
-                        text="light"
-                      >
-                        <Card.Body style={{ padding: "25px" }}>
-                          <div
-                            className="d-flex justify-content-center align-items-center "
-                            style={{ height: "100%", width: "100%" }}
-                          >
-                            <strong style={{ fontSize: "30px" }}>
-                              {theUser.posts.length}
-                            </strong>
-                          </div>
-                        </Card.Body>
-                        <Card.Footer style={{ padding: "5px" }}>
-                          <div className="d-flex justify-content-center align-items-center">
-                            <p style={{ marginTop: "-3px" }}>POSTS</p>
-                          </div>
-                        </Card.Footer>
-                      </Card>
-                      <Card
-                        style={{
-                          width: "80px",
-                          height: "80px",
-                          marginTop: "2px",
-                        }}
-                        bg="secondary"
-                        text="light"
-                      >
-                        <Card.Body style={{ padding: "25px" }}>
-                          <div
-                            className="d-flex justify-content-center align-items-center "
-                            style={{ height: "100%", width: "100%" }}
-                          >
-                            <strong style={{ fontSize: "30px" }}>
-                              {theUser.posts.length}
-                            </strong>
-                          </div>
-                        </Card.Body>
-                        <Card.Footer style={{ padding: "5px" }}>
-                          <div className="d-flex justify-content-center align-items-center">
-                            <p style={{ marginTop: "-3px" }}>POSTS</p>
-                          </div>
-                        </Card.Footer>
-                      </Card>
+                      {theUser.verified ? (
+                        <Card
+                          style={{
+                            width: "80px",
+                            height: "80px",
+                            marginTop: "2px",
+                            marginLeft: "4px",
+                          }}
+                          bg="secondary"
+                          text="light"
+                        >
+                          <Card.Body style={{ padding: "25px" }}>
+                            <div
+                              className="d-flex justify-content-center align-items-center "
+                              style={{ height: "100%", width: "100%" }}
+                            >
+                              <strong style={{ fontSize: "30px" }}>
+                                <FontAwesomeIcon icon={faCertificate} />
+                              </strong>
+                            </div>
+                          </Card.Body>
+                          <Card.Footer style={{ padding: "5px" }}>
+                            <div className="d-flex justify-content-center align-items-center">
+                              <p style={{ marginTop: "-3px" }}>STATUS</p>
+                            </div>
+                          </Card.Footer>
+                        </Card>
+                      ) : null}
                     </div>
                   </>
                 )}

@@ -80,7 +80,7 @@ export default function Feed() {
     <>
       <Container
         className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "102vh" }}
       >
         <div className="w-100" style={{ minWidth: "300px" }}>
           <div className="d-flex justify-content-center align-items-center mt-3 mb-3 ">

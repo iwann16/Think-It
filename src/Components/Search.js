@@ -40,7 +40,7 @@ export default function Search() {
       <Navbar />
       <Container
         className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "100vh", color: "white" }}
+        style={{ minHeight: "101vh", color: "white" }}
       >
         <div className="w-50" style={{ minWidth: "350px" }}>
           <h2 className="text-center mb-4">Search User</h2>

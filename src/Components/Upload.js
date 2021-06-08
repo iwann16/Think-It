@@ -86,7 +86,7 @@ export default function Upload() {
       <Navbar />
       <Container
         className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "101vh" }}
       >
         <div className="w-50" style={{ minWidth: "350px" }}>
           <Card bg="dark" text="light">

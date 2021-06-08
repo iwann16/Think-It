@@ -26,6 +26,7 @@ export function AuthProvider({ children }) {
               signInWith: cred.credential.signInMethod,
               userId: cred.user.uid,
               posts: [],
+              verified: false,
               joinedAt: new Date(),
             });
           }
